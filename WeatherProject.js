@@ -7,13 +7,23 @@ import {
   View
 } from 'react-native';
 
-class WeatherProject extends Component {
-  constructor(props) {
-    super(props);
-    this.state =  {
+var WeatherProject = React.createClass({
+  // // NOTE: this works with:
+  // // class WeatherProject extends Component {
+  // constructor(props) {
+  //   super(props);
+  //   this.state =  {
+  //     zip: ''
+  //   };
+  // }
+
+  // NOTE: this works with:
+  // var WeatherProject = React.createClass({
+  getInitialState() {
+    return {
       zip: ''
     };
-  }
+  },
 
   render() {
     return (
@@ -34,7 +44,7 @@ class WeatherProject extends Component {
       </View>
     );
   }
-}
+});
 
 const styles = StyleSheet.create({
   container: {
