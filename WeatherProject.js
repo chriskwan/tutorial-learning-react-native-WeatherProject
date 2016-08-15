@@ -41,13 +41,6 @@ class WeatherProject extends Component {
         </Text>
         <TextInput style={styles.input}
                    onSubmitEditing={(event) => this._handleTextChange(event)} />
-        <Text style={styles.instructions}>
-          To get started, edit index.ios.js
-        </Text>
-        <Text style={styles.instructions}>
-          Press Cmd+R to reload,{'\n'}
-          Cmd+D or shake for dev menu
-        </Text>
       </View>
     );
   }
@@ -65,11 +58,6 @@ const styles = StyleSheet.create({
     fontSize: 20,
     textAlign: 'center',
     margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
   },
   input: {
     fontSize: 20,
