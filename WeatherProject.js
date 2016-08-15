@@ -8,11 +8,21 @@ import {
 } from 'react-native';
 
 class WeatherProject extends Component {
+  constructor(props) {
+    super(props);
+    this.state =  {
+      zip: ''
+    };
+  }
+
   render() {
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>
           Welcome to the Weather Project!
+        </Text>
+        <Text style={styles.welcome}>
+          You input {this.state.zip}.
         </Text>
         <Text style={styles.instructions}>
           To get started, edit index.ios.js
