@@ -7,6 +7,7 @@ import {
   TextInput,
   View
 } from 'react-native';
+import Forecast from './Forecast';
 
 class WeatherProject extends Component {
 // var WeatherProject = React.createClass({
@@ -16,7 +17,12 @@ class WeatherProject extends Component {
   constructor(props) {
     super(props);
     this.state =  {
-      zip: ''
+      zip: '',
+      forecast: {
+        main: 'Clouds',
+        description: 'few clouds',
+        temp: 45.7
+      }
     };
   }
 
@@ -39,7 +45,12 @@ class WeatherProject extends Component {
         <Text style={styles.welcome}>
           You input {this.state.zip}.
         </Text>
+        <Forecast main={this.state.forecast.main}
+                  description={this.state.forecast.description}
+                  temp={this.state.forecast.temp}
+        />
         <TextInput style={styles.input}
+                   returnKeyType='go'
                    onSubmitEditing={(event) => this._handleTextChange(event)} />
       </View>
     );
