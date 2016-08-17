@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 import {
   AppRegistry,
+  Image,
   StyleSheet,
   Text,
   TextInput,
@@ -45,6 +46,10 @@ class WeatherProject extends Component {
         <Text style={styles.welcome}>
           You input {this.state.zip}.
         </Text>
+        <Image source={require('./flowers.jpg')}
+               resizeMode='center'
+               style={styles.backdrop}>
+        </Image>
         <Forecast main={this.state.forecast.main}
                   description={this.state.forecast.description}
                   temp={this.state.forecast.temp}
