@@ -36,8 +36,26 @@ class WeatherProject extends Component {
   // },
 
   _handleTextChange(event) {
-    console.log(event.nativeEvent.text);
-    this.setState({zip: event.nativeEvent.text});
+    // console.log(event.nativeEvent.text);
+    // this.setState({zip: event.nativeEvent.text});
+    var zip = event.nativeEvent.text;
+    this.setState({zip: zip});
+
+    fetch('http://api.openweathermap.org/data/2.5/weather?q=' + zip + '&units=imperial')
+      .then((response) => response.json())
+      .then((responseJSON) => {
+        console.log(responseJSON);
+        this.setState({
+          forecast: {
+            main: responseJSON.weather[0].main,
+            description: responseJSON.weather[0].description,
+            temp: responseJSON.main.temp
+          }
+        });
+      })
+      .catch((error) => {
+        console.warn(error);
+      });
   }
 
   render() {
