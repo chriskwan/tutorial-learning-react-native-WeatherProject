@@ -17,13 +17,18 @@ class WeatherProject extends Component {
   // // class WeatherProject extends Component {
   constructor(props) {
     super(props);
-    this.state =  {
+    // mock data
+    // this.state =  {
+    //   zip: '',
+    //   forecast: {
+    //     main: 'Clouds',
+    //     description: 'few clouds',
+    //     temp: 45.7
+    //   }
+    // };
+    this.state = {
       zip: '',
-      forecast: {
-        main: 'Clouds',
-        description: 'few clouds',
-        temp: 45.7
-      }
+      forecast: null
     };
   }
 
