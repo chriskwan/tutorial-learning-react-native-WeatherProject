@@ -64,6 +64,12 @@ class WeatherProject extends Component {
   }
 
   render() {
+    let content = null;
+    if (this.state.forecast !== null) {
+      content = <Forecast main={this.state.forecast.main}
+                          description={this.state.forecast.description}
+                          temp={this.state.forecast.temp} />
+    }
     return (
       <View style={styles.container}>
         <Image source={require('./flowers.jpg')}
@@ -80,9 +86,7 @@ class WeatherProject extends Component {
                            onSubmitEditing={(event) => this._handleTextChange(event)} />
               </View>
             </View>
-            <Forecast main={this.state.forecast.main}
-                      description={this.state.forecast.description}
-                      temp={this.state.forecast.temp} />
+            {content}
           </View>
         </Image>
       </View>
