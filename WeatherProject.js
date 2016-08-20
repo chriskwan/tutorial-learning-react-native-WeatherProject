@@ -72,9 +72,6 @@ class WeatherProject extends Component {
     }
     return (
       <View style={styles.container}>
-        <Image source={require('./flowers.jpg')}
-               resizeMode='cover' //tutorial said cover but repeat looks better for my photo
-               style={styles.backdrop}>
           <View style={styles.overlay}>
             <View style={styles.row}>
               <Text style={styles.mainText}>
@@ -88,7 +85,6 @@ class WeatherProject extends Component {
             </View>
             {content}
           </View>
-        </Image>
       </View>
     );
   }
